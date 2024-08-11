@@ -16,6 +16,12 @@
 		9540B8CC2C66F4560055B49F /* AccountRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540B8CB2C66F4560055B49F /* AccountRegistrationView.swift */; };
 		9540B8CE2C66F5220055B49F /* AccountRegistrationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540B8CD2C66F5220055B49F /* AccountRegistrationForm.swift */; };
 		9540B8D02C671EC60055B49F /* AccountRegistrationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540B8CF2C671EC60055B49F /* AccountRegistrationStore.swift */; };
+		95FC1A6D2C6733550032D43D /* GazeboAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A6C2C6733550032D43D /* GazeboAPIError.swift */; };
+		95FC1A702C6949280032D43D /* GazeboAPIAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A6F2C6949280032D43D /* GazeboAPIAgent.swift */; };
+		95FC1A732C694CB40032D43D /* TuneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A722C694CB40032D43D /* TuneStore.swift */; };
+		95FC1A752C694D9B0032D43D /* GazeboTuneList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A742C694D9B0032D43D /* GazeboTuneList.swift */; };
+		95FC1A782C694F490032D43D /* GazeboBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A772C694F490032D43D /* GazeboBand.swift */; };
+		95FC1A7A2C694FD80032D43D /* TuneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A792C694FD80032D43D /* TuneListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 		9540B8CB2C66F4560055B49F /* AccountRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRegistrationView.swift; sourceTree = "<group>"; };
 		9540B8CD2C66F5220055B49F /* AccountRegistrationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRegistrationForm.swift; sourceTree = "<group>"; };
 		9540B8CF2C671EC60055B49F /* AccountRegistrationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRegistrationStore.swift; sourceTree = "<group>"; };
+		95FC1A6C2C6733550032D43D /* GazeboAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboAPIError.swift; sourceTree = "<group>"; };
+		95FC1A6F2C6949280032D43D /* GazeboAPIAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboAPIAgent.swift; sourceTree = "<group>"; };
+		95FC1A722C694CB40032D43D /* TuneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneStore.swift; sourceTree = "<group>"; };
+		95FC1A742C694D9B0032D43D /* GazeboTuneList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboTuneList.swift; sourceTree = "<group>"; };
+		95FC1A772C694F490032D43D /* GazeboBand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboBand.swift; sourceTree = "<group>"; };
+		95FC1A792C694FD80032D43D /* TuneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +73,13 @@
 		9540B8A32C65CB320055B49F /* Gazebo */ = {
 			isa = PBXGroup;
 			children = (
-				9540B8D12C67307B0055B49F /* Registration */,
+				95FC1A7B2C6953FE0032D43D /* Landing */,
+				95FC1A762C694F1B0032D43D /* Bands */,
 				9540B8C42C66F16B0055B49F /* API */,
+				95FC1A712C694AF00032D43D /* Login */,
+				9540B8D12C67307B0055B49F /* Registration */,
+				95FC1A6E2C6948CF0032D43D /* Tunes */,
 				9540B8A42C65CB320055B49F /* GazeboApp.swift */,
-				9540B8A62C65CB320055B49F /* TuneView.swift */,
-				9540B8C82C66F42F0055B49F /* LoginView.swift */,
 				9540B8A82C65CB340055B49F /* Assets.xcassets */,
 				9540B8AA2C65CB340055B49F /* Preview Content */,
 			);
@@ -83,17 +97,10 @@
 		9540B8C42C66F16B0055B49F /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9540B8C52C66F17F0055B49F /* Models */,
+				95FC1A6C2C6733550032D43D /* GazeboAPIError.swift */,
+				95FC1A6F2C6949280032D43D /* GazeboAPIAgent.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		9540B8C52C66F17F0055B49F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				9540B8C62C66F18C0055B49F /* GazeboTune.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		9540B8D12C67307B0055B49F /* Registration */ = {
@@ -104,6 +111,41 @@
 				9540B8CB2C66F4560055B49F /* AccountRegistrationView.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		95FC1A6E2C6948CF0032D43D /* Tunes */ = {
+			isa = PBXGroup;
+			children = (
+				9540B8C62C66F18C0055B49F /* GazeboTune.swift */,
+				95FC1A742C694D9B0032D43D /* GazeboTuneList.swift */,
+				95FC1A722C694CB40032D43D /* TuneStore.swift */,
+				9540B8A62C65CB320055B49F /* TuneView.swift */,
+				95FC1A792C694FD80032D43D /* TuneListView.swift */,
+			);
+			path = Tunes;
+			sourceTree = "<group>";
+		};
+		95FC1A712C694AF00032D43D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9540B8C82C66F42F0055B49F /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		95FC1A762C694F1B0032D43D /* Bands */ = {
+			isa = PBXGroup;
+			children = (
+				95FC1A772C694F490032D43D /* GazeboBand.swift */,
+			);
+			path = Bands;
+			sourceTree = "<group>";
+		};
+		95FC1A7B2C6953FE0032D43D /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,10 +221,16 @@
 				9540B8A72C65CB320055B49F /* TuneView.swift in Sources */,
 				9540B8D02C671EC60055B49F /* AccountRegistrationStore.swift in Sources */,
 				9540B8CC2C66F4560055B49F /* AccountRegistrationView.swift in Sources */,
+				95FC1A7A2C694FD80032D43D /* TuneListView.swift in Sources */,
+				95FC1A6D2C6733550032D43D /* GazeboAPIError.swift in Sources */,
 				9540B8A52C65CB320055B49F /* GazeboApp.swift in Sources */,
+				95FC1A702C6949280032D43D /* GazeboAPIAgent.swift in Sources */,
+				95FC1A752C694D9B0032D43D /* GazeboTuneList.swift in Sources */,
 				9540B8C92C66F42F0055B49F /* LoginView.swift in Sources */,
+				95FC1A782C694F490032D43D /* GazeboBand.swift in Sources */,
 				9540B8CE2C66F5220055B49F /* AccountRegistrationForm.swift in Sources */,
 				9540B8C72C66F18C0055B49F /* GazeboTune.swift in Sources */,
+				95FC1A732C694CB40032D43D /* TuneStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct GazeboApp: App {
+    @StateObject var accountRegistrationStore = AccountRegistrationStore()
     var body: some Scene {
         WindowGroup {
-            TuneView()
+            AccountRegistrationView(store: accountRegistrationStore)
         }
     }
 }

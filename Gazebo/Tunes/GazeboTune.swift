@@ -11,7 +11,7 @@ struct GazeboTuneService: Decodable {
     let tune: GazeboTune
 }
 
-struct GazeboTune: Codable {
+struct GazeboTune: Identifiable, Codable {
     let id: Int
     let createdAt: String
     let version: Int
