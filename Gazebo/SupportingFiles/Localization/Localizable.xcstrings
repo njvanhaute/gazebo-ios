@@ -1,0 +1,48 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Account already exists" : {
+
+    },
+    "Account created!" : {
+
+    },
+    "Create an account" : {
+
+    },
+    "Email address" : {
+
+    },
+    "Gazebo" : {
+
+    },
+    "Hello, World!" : {
+
+    },
+    "ID: %@" : {
+
+    },
+    "Keys: %@" : {
+
+    },
+    "Log in to your account" : {
+
+    },
+    "Login" : {
+
+    },
+    "Name" : {
+
+    },
+    "OK" : {
+
+    },
+    "Password" : {
+
+    },
+    "Register" : {
+
+    }
+  },
+  "version" : "1.0"
+}

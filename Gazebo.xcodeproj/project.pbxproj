@@ -31,6 +31,7 @@
 		95FC1A892C6965F60032D43D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A882C6965F60032D43D /* RootView.swift */; };
 		95FC1A8B2C69660F0032D43D /* GazeboAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A8A2C69660F0032D43D /* GazeboAuthentication.swift */; };
 		95FC1A8E2C69678A0032D43D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A8D2C69678A0032D43D /* HomeView.swift */; };
+		95FC1A962C6970FA0032D43D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 95FC1A952C6970FA0032D43D /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		95FC1A882C6965F60032D43D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		95FC1A8A2C69660F0032D43D /* GazeboAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboAuthentication.swift; sourceTree = "<group>"; };
 		95FC1A8D2C69678A0032D43D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		95FC1A952C6970FA0032D43D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		9540B8A32C65CB320055B49F /* Gazebo */ = {
 			isa = PBXGroup;
 			children = (
+				95FC1A932C6970C30032D43D /* SupportingFiles */,
 				95FC1A8F2C69694D0032D43D /* FormValidation */,
 				95FC1A8C2C69676F0032D43D /* Home */,
 				95FC1A7B2C6953FE0032D43D /* Landing */,
@@ -191,6 +194,22 @@
 			path = FormValidation;
 			sourceTree = "<group>";
 		};
+		95FC1A932C6970C30032D43D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				95FC1A942C6970CC0032D43D /* Localization */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		95FC1A942C6970CC0032D43D /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				95FC1A952C6970FA0032D43D /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +274,7 @@
 			files = (
 				9540B8AC2C65CB340055B49F /* Preview Assets.xcassets in Resources */,
 				9540B8A92C65CB340055B49F /* Assets.xcassets in Resources */,
+				95FC1A962C6970FA0032D43D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
