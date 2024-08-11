@@ -12,4 +12,6 @@ enum GazeboAPIError: Error {
     case invalidResponse
     case invalidData
     case emailAlreadyInUse
+    case internalServerError
+    case unhandledError
 }

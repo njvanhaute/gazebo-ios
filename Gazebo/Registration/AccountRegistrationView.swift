@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct AccountRegistrationView: View {
+    @Environment(\.dismiss) private var dismiss
     @ObservedObject var store: AccountRegistrationStore
     @State private var enteredDuplicateEmail = false
     @State private var accountCreated = false
-    
+
     var body: some View {
         registrationFormView
             .alert(
@@ -21,19 +22,27 @@ struct AccountRegistrationView: View {
                 actions: { _ in
                     Button("OK", role: .cancel) {
                         store.form.email = ""
+                        store.form.password = ""
                     }
                 },
                 message: { reason in Text(reason) })
             .alert(
                 "Account created!",
                 isPresented: $accountCreated,
-                presenting: "Your account was created successfully! Please check your email for account activation details.",
-                actions: { _ in Button("OK", role: .cancel) {}},
+                presenting:
+                    """
+                    Your account was created successfully! Please check your email for account activation details.
+                    """,
+                actions: { _ in
+                    Button("OK", role: .cancel) {
+                        dismiss()
+                    }
+                },
                 message: { reason in Text(reason) })
     }
-    
+
     var registrationFormView: some View {
-        VStack() {
+        VStack {
             Spacer()
             Text("Create an account")
             textFields
@@ -41,20 +50,21 @@ struct AccountRegistrationView: View {
             Spacer()
         }
     }
-    
+
     var textFields: some View {
         VStack(alignment: .leading, spacing: 15) {
             TextField("Name", text: $store.form.name)
+                .autocorrectionDisabled()
             TextField("Email address", text: $store.form.email)
                 .keyboardType(.emailAddress)
                 .textContentType(.emailAddress)
-                .disableAutocorrection(true)
+                .autocorrectionDisabled()
                 .autocapitalization(.none)
             SecureField("Password", text: $store.form.password)
         }
         .padding(20)
     }
-    
+
     var registerButton: some View {
         Button {
             submitForm()
@@ -64,7 +74,7 @@ struct AccountRegistrationView: View {
         }
         .disabled(!store.canSubmitForm)
     }
-    
+
     func submitForm() {
         Task {
             do {

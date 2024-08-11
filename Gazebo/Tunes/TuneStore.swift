@@ -10,14 +10,13 @@ import Foundation
 class TuneStore: ObservableObject {
     let apiAgent = GazeboAPIAgent()
     let band: GazeboBand
-    @Published var tuneList: GazeboTuneList? = nil
-    
+    @Published var tuneList: GazeboTuneList?
+
     init(for band: GazeboBand) {
         self.band = band
     }
-    
+
     func loadTunes() async throws {
         tuneList = try await apiAgent.getResource(from: "bands/\(band.id)/tunes")
     }
 }
-

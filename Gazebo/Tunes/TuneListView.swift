@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TuneListView: View {
     @ObservedObject var store: TuneStore
-    
+
     var body: some View {
         tuneList
             .onAppear {
@@ -18,7 +18,7 @@ struct TuneListView: View {
                 }
             }
     }
-    
+
     @ViewBuilder
     var tuneList: some View {
         if store.tuneList == nil {
