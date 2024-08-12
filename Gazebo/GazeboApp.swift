@@ -12,6 +12,7 @@ struct GazeboApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environmentObject(GazeboAuthentication.shared)
         }
     }
 }
