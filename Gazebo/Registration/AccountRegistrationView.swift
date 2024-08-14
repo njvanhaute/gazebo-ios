@@ -12,6 +12,7 @@ struct AccountRegistrationView: View {
     @ObservedObject var store: AccountRegistrationStore
     @State private var enteredDuplicateEmail = false
     @State private var accountCreated = false
+    @State private var cantFindBackend = false
 
     var body: some View {
         registrationFormView
@@ -39,6 +40,21 @@ struct AccountRegistrationView: View {
                     }
                 },
                 message: { reason in Text(reason) })
+            .alert(
+                "Can't connect to server",
+                isPresented: $cantFindBackend,
+                presenting:
+                    """
+                    We're unable to connect to our servers right now.
+                    Please check your internet connection, or try again later.
+                    """,
+                actions: { _ in
+                    Button("OK", role: .cancel) {
+                        dismiss()
+                    }
+                },
+                message: { reason in Text(reason) }
+            )
     }
 
     var registrationFormView: some View {
@@ -90,7 +106,9 @@ struct AccountRegistrationView: View {
             } catch GazeboAPIError.emailAlreadyInUse {
                 enteredDuplicateEmail = true
             } catch {
-                print("unexpected error")
+                if let error = error as? URLError, error.code == .cannotConnectToHost {
+                    cantFindBackend = true
+                }
             }
         }
     }
