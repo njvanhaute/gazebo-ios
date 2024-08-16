@@ -14,4 +14,5 @@ struct AuthenticationTokenService: Decodable {
 struct AuthenticationToken: Decodable {
     let token: String
     let expiry: String
+    let userId: Int
 }

@@ -12,6 +12,7 @@ class GazeboAuthentication: ObservableObject {
     enum KeychainDataType: String {
         case token
         case password
+        case userId
     }
 
     static let shared = GazeboAuthentication()
@@ -34,7 +35,8 @@ class GazeboAuthentication: ObservableObject {
         if let email = getEmail() {
             let password = getPassword(for: email)
             let token = getToken(for: email)
-            if expiryValid() && password != nil && token != nil {
+            let userId = getUserId(for: email)
+            if expiryValid() && password != nil && token != nil && userId != nil {
                 return true
             }
         }
@@ -51,6 +53,7 @@ class GazeboAuthentication: ObservableObject {
     func setSecrets(email: String, password: String, accessToken: AuthenticationToken) {
         keychain.set(password, forKey: keychainKey(for: email, type: .password))
         keychain.set(accessToken.token, forKey: keychainKey(for: email, type: .token))
+        keychain.set(String(accessToken.userId), forKey: keychainKey(for: email, type: .userId))
 
         UserDefaults.standard.set(email, forKey: userDefaultsEmailKey)
         UserDefaults.standard.set(accessToken.expiry, forKey: userDefaultsTokenExpiryKey)
@@ -93,24 +96,15 @@ class GazeboAuthentication: ObservableObject {
         keychain.get(keychainKey(for: email, type: .token))
     }
 
-    func getExpiryDate() -> Date? {
-        if let expiryString = UserDefaults.standard.string(forKey: userDefaultsTokenExpiryKey) {
-            return getDateFormatter().date(from: expiryString)
-        }
-        return nil
+    func getUserId(for email: String) -> String? {
+        keychain.get(keychainKey(for: email, type: .userId))
     }
 
-    private func getDateFormatter() -> ISO8601DateFormatter {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [
-            .withFractionalSeconds,
-            .withFullDate,
-            .withFullTime,
-            .withDashSeparatorInDate,
-            .withColonSeparatorInTime,
-            .withColonSeparatorInTimeZone
-        ]
-        return formatter
+    func getExpiryDate() -> Date? {
+        if let expiryString = UserDefaults.standard.string(forKey: userDefaultsTokenExpiryKey) {
+            return DateFormatter.shared.formatter.date(from: expiryString)
+        }
+        return nil
     }
 
     private func expiryValid() -> Bool {

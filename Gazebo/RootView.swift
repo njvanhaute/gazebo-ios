@@ -12,7 +12,7 @@ struct RootView: View {
 
     var body: some View {
         if auth.loggedIn {
-            HomeView()
+            BandListView()
         } else {
             LandingPageView()
         }

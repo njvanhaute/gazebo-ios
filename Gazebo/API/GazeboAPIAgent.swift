@@ -40,9 +40,10 @@ struct GazeboAPIAgent {
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
 
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(for: request)
 
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            print(response)
             throw GazeboAPIError.invalidResponse
         }
 

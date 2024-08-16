@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct GazeboBand {
+struct GazeboBand: Identifiable, Hashable, Decodable {
     let id: Int
     let ownerId: Int
     let createdAt: String
     let version: Int
     let name: String
+}
+
+struct GazeboBandList: Decodable {
+    let bands: [GazeboBand]
 }
