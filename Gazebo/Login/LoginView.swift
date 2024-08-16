@@ -11,6 +11,7 @@ struct LoginView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var store: LoginStore
     @State private var loginSuccess = false
+    @State private var cantFindBackend = false
 
     var body: some View {
         VStack {
@@ -20,6 +21,21 @@ struct LoginView: View {
             loginButton
             Spacer()
         }
+        .alert(
+            "Can't connect to server",
+            isPresented: $cantFindBackend,
+            presenting:
+                """
+                We're unable to connect to our servers right now.
+                Please check your internet connection, or try again later.
+                """,
+            actions: { _ in
+                Button("OK", role: .cancel) {
+                    dismiss()
+                }
+            },
+            message: { reason in Text(reason) }
+        )
     }
 
     var textFields: some View {
@@ -58,7 +74,9 @@ struct LoginView: View {
             } catch GazeboAPIError.emailAlreadyInUse {
                 print("duplicate email")
             } catch {
-                print("unexpected error")
+                if let error = error as? URLError, error.code == .cannotConnectToHost {
+                    cantFindBackend = true
+                }
             }
         }
     }
