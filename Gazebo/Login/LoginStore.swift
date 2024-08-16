@@ -26,6 +26,11 @@ class LoginStore: ObservableObject {
         PasswordValidator.validate(form.password) && EmailValidator.validate(form.email)
     }
 
+    func clearFormData() {
+        form.email = ""
+        form.password = ""
+    }
+
     @MainActor
     func submit() async throws {
         networkRequestIsInFlight = true
@@ -36,8 +41,8 @@ class LoginStore: ObservableObject {
         let authTokenWrapped: AuthenticationTokenService =
         try await GazeboAPIAgent.shared.postResource(form, to: "tokens/authentication")
 
-        try GazeboAuthentication.shared.cacheSecrets(email: form.email,
-                                                     password: form.password,
-                                                     accessToken: authTokenWrapped.authenticationToken)
+        GazeboAuthentication.shared.setSecrets(email: form.email,
+                                                   password: form.password,
+                                                   accessToken: authTokenWrapped.authenticationToken)
     }
 }

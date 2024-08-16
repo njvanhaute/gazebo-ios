@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Hello, World!")
+        Button("Log out") {
+            GazeboAuthentication.shared.logout()
+        }
     }
 }
 

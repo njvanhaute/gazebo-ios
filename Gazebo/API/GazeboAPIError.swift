@@ -13,5 +13,6 @@ enum GazeboAPIError: Error {
     case invalidData
     case emailAlreadyInUse
     case internalServerError
+    case statusUnauthorized
     case unhandledError
 }

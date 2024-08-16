@@ -33,6 +33,7 @@
 		95FC1A8E2C69678A0032D43D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A8D2C69678A0032D43D /* HomeView.swift */; };
 		95FC1A962C6970FA0032D43D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 95FC1A952C6970FA0032D43D /* Localizable.xcstrings */; };
 		C0D64B672C6FF49000210C98 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0D64B662C6FF49000210C98 /* KeychainSwift */; };
+		C0D64B692C70036200210C98 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B682C70036200210C98 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		95FC1A8A2C69660F0032D43D /* GazeboAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboAuthentication.swift; sourceTree = "<group>"; };
 		95FC1A8D2C69678A0032D43D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		95FC1A952C6970FA0032D43D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		C0D64B682C70036200210C98 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				95FC1A712C694AF00032D43D /* Login */,
 				9540B8D12C67307B0055B49F /* Registration */,
 				95FC1A6E2C6948CF0032D43D /* Tunes */,
+				C0D64B682C70036200210C98 /* Extensions.swift */,
 				95FC1A882C6965F60032D43D /* RootView.swift */,
 				95FC1A8A2C69660F0032D43D /* GazeboAuthentication.swift */,
 				9540B8A42C65CB320055B49F /* GazeboApp.swift */,
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D64B692C70036200210C98 /* Extensions.swift in Sources */,
 				9540B8A72C65CB320055B49F /* TuneView.swift in Sources */,
 				9540B8D02C671EC60055B49F /* AccountRegistrationStore.swift in Sources */,
 				95FC1A7F2C6959D20032D43D /* LoginStore.swift in Sources */,

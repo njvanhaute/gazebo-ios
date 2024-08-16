@@ -53,7 +53,6 @@ class AccountRegistrationStore: ObservableObject {
         }
 
         if response.statusCode != 202 {
-            print(response.statusCode)
             throw GazeboAPIError.emailAlreadyInUse
         }
     }

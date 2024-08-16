@@ -12,6 +12,7 @@ struct LoginView: View {
     @ObservedObject var store: LoginStore
     @State private var loginSuccess = false
     @State private var cantFindBackend = false
+    @State private var invalidCredentials = false
 
     var body: some View {
         VStack {
@@ -21,6 +22,20 @@ struct LoginView: View {
             loginButton
             Spacer()
         }
+        .alert(
+            "Invalid Credentials",
+            isPresented: $invalidCredentials,
+            presenting:
+                """
+                The information you entered could not be matched to an account.
+                """,
+            actions: { _ in
+                Button("OK", role: .cancel) {
+                    store.clearFormData()
+                }
+            },
+            message: { reason in Text(reason) }
+        )
         .alert(
             "Can't connect to server",
             isPresented: $cantFindBackend,
@@ -71,8 +86,8 @@ struct LoginView: View {
                 print("invalid response")
             } catch GazeboAPIError.invalidData {
                 print("invalid data")
-            } catch GazeboAPIError.emailAlreadyInUse {
-                print("duplicate email")
+            } catch GazeboAPIError.statusUnauthorized {
+                invalidCredentials = true
             } catch {
                 if let error = error as? URLError, error.code == .cannotConnectToHost {
                     cantFindBackend = true

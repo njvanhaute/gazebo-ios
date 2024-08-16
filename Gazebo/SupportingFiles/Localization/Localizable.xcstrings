@@ -19,16 +19,19 @@
     "Gazebo" : {
 
     },
-    "Hello, World!" : {
+    "ID: %@" : {
 
     },
-    "ID: %@" : {
+    "Invalid Credentials" : {
 
     },
     "Keys: %@" : {
 
     },
     "Log in to your account" : {
+
+    },
+    "Log out" : {
 
     },
     "Login" : {

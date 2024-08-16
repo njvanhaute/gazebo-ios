@@ -16,11 +16,22 @@ struct GazeboAPIAgent {
         hostname = "http://localhost:4000/v1/"
     }
 
-    func getResource<T: Decodable>(from path: String) async throws -> T {
+    func getResource<T: Decodable>(from path: String, authenticate: Bool) async throws -> T {
         let endpoint = hostname + path
 
         guard let url = URL(string: endpoint) else {
             throw GazeboAPIError.invalidURL
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        if authenticate && GazeboAuthentication.shared.loggedIn {
+            if GazeboAuthentication.shared.tokenTTL() < .fiveMinutes {
+                try await GazeboAuthentication.shared.reauthenticateWithStoredCredentials()
+            }
+            let email = GazeboAuthentication.shared.getEmail()!
+            let token = GazeboAuthentication.shared.getToken(for: email)!
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
 
         let (data, response) = try await URLSession.shared.data(from: url)
@@ -77,6 +88,8 @@ struct GazeboAPIAgent {
         switch response.statusCode {
         case 500:
             throw GazeboAPIError.internalServerError
+        case 401:
+            throw GazeboAPIError.statusUnauthorized
         default:
             throw GazeboAPIError.unhandledError
         }
