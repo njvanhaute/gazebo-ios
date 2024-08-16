@@ -27,7 +27,13 @@ struct GazeboAPIAgent {
         request.httpMethod = "GET"
         if authenticate && GazeboAuthentication.shared.loggedIn {
             if GazeboAuthentication.shared.tokenTTL() < .fiveMinutes {
-                try await GazeboAuthentication.shared.reauthenticateWithStoredCredentials()
+                do {
+                    try await GazeboAuthentication.shared.reauthenticateWithStoredCredentials()
+                } catch {
+                    // failed to reauthenticate; log out since we can't make any API calls
+                    GazeboAuthentication.shared.logout()
+                    throw GazeboAPIError.internalServerError
+                }
             }
             let email = GazeboAuthentication.shared.getEmail()!
             let token = GazeboAuthentication.shared.getToken(for: email)!
