@@ -8,7 +8,13 @@
 import Foundation
 
 struct GazeboAPIAgent {
-    let hostname = "http://localhost:4000/v1/"
+    let hostname: String
+
+    static let shared = GazeboAPIAgent()
+
+    private init() {
+        hostname = "http://localhost:4000/v1/"
+    }
 
     func getResource<T: Decodable>(from path: String) async throws -> T {
         let endpoint = hostname + path

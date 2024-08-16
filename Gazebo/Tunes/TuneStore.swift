@@ -8,7 +8,6 @@
 import Foundation
 
 class TuneStore: ObservableObject {
-    let apiAgent = GazeboAPIAgent()
     let band: GazeboBand
     @Published var tuneList: GazeboTuneList?
 
@@ -17,6 +16,6 @@ class TuneStore: ObservableObject {
     }
 
     func loadTunes() async throws {
-        tuneList = try await apiAgent.getResource(from: "bands/\(band.id)/tunes")
+        tuneList = try await GazeboAPIAgent.shared.getResource(from: "bands/\(band.id)/tunes")
     }
 }
