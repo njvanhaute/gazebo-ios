@@ -24,7 +24,6 @@
 		95FC1A732C694CB40032D43D /* TuneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A722C694CB40032D43D /* TuneStore.swift */; };
 		95FC1A752C694D9B0032D43D /* GazeboTuneList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A742C694D9B0032D43D /* GazeboTuneList.swift */; };
 		95FC1A782C694F490032D43D /* GazeboBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A772C694F490032D43D /* GazeboBand.swift */; };
-		95FC1A7A2C694FD80032D43D /* TuneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A792C694FD80032D43D /* TuneListView.swift */; };
 		95FC1A7D2C6954570032D43D /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A7C2C6954570032D43D /* LandingPageView.swift */; };
 		95FC1A7F2C6959D20032D43D /* LoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A7E2C6959D20032D43D /* LoginStore.swift */; };
 		95FC1A812C695AD30032D43D /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A802C695AD30032D43D /* EmailValidator.swift */; };
@@ -68,7 +67,6 @@
 		95FC1A722C694CB40032D43D /* TuneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneStore.swift; sourceTree = "<group>"; };
 		95FC1A742C694D9B0032D43D /* GazeboTuneList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboTuneList.swift; sourceTree = "<group>"; };
 		95FC1A772C694F490032D43D /* GazeboBand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboBand.swift; sourceTree = "<group>"; };
-		95FC1A792C694FD80032D43D /* TuneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneListView.swift; sourceTree = "<group>"; };
 		95FC1A7C2C6954570032D43D /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		95FC1A7E2C6959D20032D43D /* LoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStore.swift; sourceTree = "<group>"; };
 		95FC1A802C695AD30032D43D /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				95FC1A712C694AF00032D43D /* Login */,
 				9540B8D12C67307B0055B49F /* Registration */,
 				C0D64B6A2C739F4D00210C98 /* Activation */,
-				95FC1A6E2C6948CF0032D43D /* Tunes */,
 				C0D64B682C70036200210C98 /* Extensions.swift */,
 				95FC1A882C6965F60032D43D /* RootView.swift */,
 				95FC1A8A2C69660F0032D43D /* GazeboAuthentication.swift */,
@@ -181,18 +178,6 @@
 				C034A4EE2C73B6B70037E379 /* TestBand.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		95FC1A6E2C6948CF0032D43D /* Tunes */ = {
-			isa = PBXGroup;
-			children = (
-				9540B8C62C66F18C0055B49F /* GazeboTune.swift */,
-				95FC1A742C694D9B0032D43D /* GazeboTuneList.swift */,
-				95FC1A722C694CB40032D43D /* TuneStore.swift */,
-				9540B8A62C65CB320055B49F /* TuneView.swift */,
-				95FC1A792C694FD80032D43D /* TuneListView.swift */,
-			);
-			path = Tunes;
 			sourceTree = "<group>";
 		};
 		95FC1A712C694AF00032D43D /* Login */ = {
@@ -254,6 +239,10 @@
 		C034A4E52C73B4AC0037E379 /* Repertoire */ = {
 			isa = PBXGroup;
 			children = (
+				9540B8C62C66F18C0055B49F /* GazeboTune.swift */,
+				95FC1A742C694D9B0032D43D /* GazeboTuneList.swift */,
+				95FC1A722C694CB40032D43D /* TuneStore.swift */,
+				9540B8A62C65CB320055B49F /* TuneView.swift */,
 				C034A4EC2C73B6A00037E379 /* RepertoireView.swift */,
 			);
 			path = Repertoire;
@@ -376,7 +365,6 @@
 				C034A4E42C73B34E0037E379 /* BandHomePageView.swift in Sources */,
 				95FC1A8E2C69678A0032D43D /* BandListView.swift in Sources */,
 				9540B8CC2C66F4560055B49F /* AccountRegistrationView.swift in Sources */,
-				95FC1A7A2C694FD80032D43D /* TuneListView.swift in Sources */,
 				95FC1A6D2C6733550032D43D /* GazeboAPIError.swift in Sources */,
 				95FC1A852C695C240032D43D /* LoginForm.swift in Sources */,
 				9540B8A52C65CB320055B49F /* GazeboApp.swift in Sources */,

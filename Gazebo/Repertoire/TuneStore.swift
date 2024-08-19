@@ -15,6 +15,7 @@ class TuneStore: ObservableObject {
         self.band = band
     }
 
+    @MainActor
     func loadTunes() async throws {
         tuneList = try await GazeboAPIAgent.shared.getResource(from: "bands/\(band.id)/tunes", authenticate: true)
     }

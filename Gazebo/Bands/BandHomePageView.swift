@@ -29,6 +29,9 @@ struct BandHomePageView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
+        .navigationDestination(for: GazeboTune.self) { tune in
+            Text(tune.title)
+        }
     }
 }
 

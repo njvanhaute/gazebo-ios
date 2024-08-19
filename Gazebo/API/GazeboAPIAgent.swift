@@ -56,6 +56,8 @@ struct GazeboAPIAgent {
             switch response.statusCode {
             case 403:
                 throw GazeboAPIError.accountNotActivated
+            case 401:
+                throw GazeboAPIError.statusUnauthorized
             default:
                 throw GazeboAPIError.unhandledError
             }
@@ -90,7 +92,6 @@ struct GazeboAPIAgent {
             }
 
             guard let encoded = try? JSONEncoder().encode(resource) else {
-                print(resource)
                 throw GazeboAPIError.invalidData
             }
 
@@ -99,8 +100,6 @@ struct GazeboAPIAgent {
             guard let response = response as? HTTPURLResponse else {
                 throw GazeboAPIError.invalidResponse
             }
-
-            print(response)
 
             if response.statusCode == 201 {
                 do {

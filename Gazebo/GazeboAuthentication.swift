@@ -34,6 +34,9 @@ class GazeboAuthentication: ObservableObject {
         if let email = getEmail() {
             let password = getPassword(for: email)
             let token = getToken(for: email)
+            if token != nil {
+                print(token!)
+            }
             if expiryValid() && password != nil && token != nil {
                 return true
             }

@@ -12,7 +12,6 @@ struct BandView: View {
 
     init(for band: GazeboBand) {
         self.band = band
-        print(band.createdAt)
     }
 
     var body: some View {
