@@ -41,6 +41,7 @@
 		C0D64B6E2C739F6E00210C98 /* ActivationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B6D2C739F6E00210C98 /* ActivationStore.swift */; };
 		C0D64B702C739F7D00210C98 /* ActivationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B6F2C739F7D00210C98 /* ActivationForm.swift */; };
 		C0D64B722C73A18900210C98 /* ActivationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B712C73A18900210C98 /* ActivationResponse.swift */; };
+		C0D64B742C73ABC700210C98 /* NewBandRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B732C73ABC700210C98 /* NewBandRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		C0D64B6D2C739F6E00210C98 /* ActivationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationStore.swift; sourceTree = "<group>"; };
 		C0D64B6F2C739F7D00210C98 /* ActivationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationForm.swift; sourceTree = "<group>"; };
 		C0D64B712C73A18900210C98 /* ActivationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationResponse.swift; sourceTree = "<group>"; };
+		C0D64B732C73ABC700210C98 /* NewBandRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBandRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				95AEDA3D2C7011FB00B9F938 /* BandStore.swift */,
 				95FC1A772C694F490032D43D /* GazeboBand.swift */,
 				95AEDA3F2C70172100B9F938 /* BandView.swift */,
+				C0D64B732C73ABC700210C98 /* NewBandRequest.swift */,
 			);
 			path = Bands;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				95FC1A702C6949280032D43D /* GazeboAPIAgent.swift in Sources */,
 				95FC1A752C694D9B0032D43D /* GazeboTuneList.swift in Sources */,
 				C0D64B6E2C739F6E00210C98 /* ActivationStore.swift in Sources */,
+				C0D64B742C73ABC700210C98 /* NewBandRequest.swift in Sources */,
 				9540B8C92C66F42F0055B49F /* LoginView.swift in Sources */,
 				95AEDA402C70172100B9F938 /* BandView.swift in Sources */,
 				C0D64B6C2C739F6000210C98 /* AccountActivationView.swift in Sources */,

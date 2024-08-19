@@ -34,6 +34,7 @@ class GazeboAuthentication: ObservableObject {
         if let email = getEmail() {
             let password = getPassword(for: email)
             let token = getToken(for: email)
+            print(token)
             if expiryValid() && password != nil && token != nil {
                 return true
             }
@@ -63,7 +64,7 @@ class GazeboAuthentication: ObservableObject {
         let password = getPassword(for: email)!
         let form = LoginForm(email: email, password: password)
         let authTokenWrapped: AuthenticationTokenService =
-            try await GazeboAPIAgent.shared.postResource(form, to: "tokens/authentication")
+            try await GazeboAPIAgent.shared.postResource(form, to: "tokens/authentication", authenticate: false)
 
         GazeboAuthentication.shared.setSecrets(email: form.email,
                                                password: form.password,

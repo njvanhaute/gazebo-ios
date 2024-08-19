@@ -39,7 +39,7 @@ class LoginStore: ObservableObject {
         }
 
         let authTokenWrapped: AuthenticationTokenService =
-        try await GazeboAPIAgent.shared.postResource(form, to: "tokens/authentication")
+        try await GazeboAPIAgent.shared.postResource(form, to: "tokens/authentication", authenticate: false)
 
         GazeboAuthentication.shared.setSecrets(email: form.email,
                                                    password: form.password,

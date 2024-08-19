@@ -15,6 +15,10 @@ struct GazeboBand: Identifiable, Hashable, Decodable {
     let name: String
 }
 
+struct GazeboBandCreatedResponse: Decodable {
+    let band: GazeboBand
+}
+
 struct GazeboBandList: Decodable {
     let bands: [GazeboBand]
 }

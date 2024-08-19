@@ -58,6 +58,16 @@ struct BandListView: View {
         .navigationDestination(for: GazeboBand.self) { band in
             BandView(for: band)
         }
+        .toolbar {
+            Button {
+                Task {
+                    try await bandStore.createBand()
+                    try await bandStore.loadBands()
+                }
+            } label: {
+                Image(systemName: "plus")
+            }
+        }
     }
 }
 
