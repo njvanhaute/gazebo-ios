@@ -174,4 +174,20 @@ struct GazeboAPIAgent {
             throw GazeboAPIError.unhandledError
         }
     }
+
+    func healthcheck() async -> Bool {
+        if !GazeboAuthentication.shared.loggedIn { return true }
+        do {
+            let url = URL(string: hostname + "healthcheck")
+            let (_, response) = try await URLSession.shared.data(from: url!)
+
+            guard let response = response as? HTTPURLResponse else {
+                throw GazeboAPIError.invalidResponse
+            }
+
+            return response.statusCode == 200
+        } catch {
+            return false
+        }
+    }
 }
