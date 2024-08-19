@@ -160,7 +160,7 @@ struct GazeboAPIAgent {
                 throw GazeboAPIError.invalidData
             }
         }
-        
+
         switch response.statusCode {
         case 500:
             throw GazeboAPIError.internalServerError

@@ -42,9 +42,6 @@ struct BandListView: View {
                 }
             },
             message: { reason in Text(reason) })
-        Button("Log out") {
-            GazeboAuthentication.shared.logout()
-        }
     }
 
     var bandList: some View {
@@ -56,7 +53,7 @@ struct BandListView: View {
         }
         .navigationTitle("Your Bands")
         .navigationDestination(for: GazeboBand.self) { band in
-            BandView(for: band)
+            BandHomePageView(for: band)
         }
         .toolbar {
             Button {

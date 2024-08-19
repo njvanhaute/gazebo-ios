@@ -36,6 +36,11 @@
 		95FC1A8E2C69678A0032D43D /* BandListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC1A8D2C69678A0032D43D /* BandListView.swift */; };
 		95FC1A962C6970FA0032D43D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 95FC1A952C6970FA0032D43D /* Localizable.xcstrings */; };
 		95FC1A982C700FE30032D43D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95FC1A972C700FE30032D43D /* KeychainSwift */; };
+		C034A4E42C73B34E0037E379 /* BandHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034A4E32C73B34E0037E379 /* BandHomePageView.swift */; };
+		C034A4E92C73B56A0037E379 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034A4E82C73B56A0037E379 /* SettingsView.swift */; };
+		C034A4EB2C73B6980037E379 /* RehearsalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034A4EA2C73B6980037E379 /* RehearsalsView.swift */; };
+		C034A4ED2C73B6A00037E379 /* RepertoireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034A4EC2C73B6A00037E379 /* RepertoireView.swift */; };
+		C034A4EF2C73B6B70037E379 /* TestBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034A4EE2C73B6B70037E379 /* TestBand.swift */; };
 		C0D64B692C70036200210C98 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B682C70036200210C98 /* Extensions.swift */; };
 		C0D64B6C2C739F6000210C98 /* AccountActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B6B2C739F6000210C98 /* AccountActivationView.swift */; };
 		C0D64B6E2C739F6E00210C98 /* ActivationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B6D2C739F6E00210C98 /* ActivationStore.swift */; };
@@ -74,6 +79,11 @@
 		95FC1A8A2C69660F0032D43D /* GazeboAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeboAuthentication.swift; sourceTree = "<group>"; };
 		95FC1A8D2C69678A0032D43D /* BandListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandListView.swift; sourceTree = "<group>"; };
 		95FC1A952C6970FA0032D43D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		C034A4E32C73B34E0037E379 /* BandHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandHomePageView.swift; sourceTree = "<group>"; };
+		C034A4E82C73B56A0037E379 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C034A4EA2C73B6980037E379 /* RehearsalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RehearsalsView.swift; sourceTree = "<group>"; };
+		C034A4EC2C73B6A00037E379 /* RepertoireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepertoireView.swift; sourceTree = "<group>"; };
+		C034A4EE2C73B6B70037E379 /* TestBand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBand.swift; sourceTree = "<group>"; };
 		C0D64B682C70036200210C98 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C0D64B6B2C739F6000210C98 /* AccountActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountActivationView.swift; sourceTree = "<group>"; };
 		C0D64B6D2C739F6E00210C98 /* ActivationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationStore.swift; sourceTree = "<group>"; };
@@ -113,6 +123,9 @@
 		9540B8A32C65CB320055B49F /* Gazebo */ = {
 			isa = PBXGroup;
 			children = (
+				C034A4E72C73B4B70037E379 /* Settings */,
+				C034A4E62C73B4B20037E379 /* Rehearsals */,
+				C034A4E52C73B4AC0037E379 /* Repertoire */,
 				95AEDA412C701BF700B9F938 /* Utilities */,
 				95FC1A932C6970C30032D43D /* SupportingFiles */,
 				95FC1A8F2C69694D0032D43D /* FormValidation */,
@@ -165,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				95AEDA422C701C0000B9F938 /* DateFormatter.swift */,
+				C034A4EE2C73B6B70037E379 /* TestBand.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -199,6 +213,7 @@
 				95FC1A772C694F490032D43D /* GazeboBand.swift */,
 				95AEDA3F2C70172100B9F938 /* BandView.swift */,
 				C0D64B732C73ABC700210C98 /* NewBandRequest.swift */,
+				C034A4E32C73B34E0037E379 /* BandHomePageView.swift */,
 			);
 			path = Bands;
 			sourceTree = "<group>";
@@ -234,6 +249,30 @@
 				95FC1A952C6970FA0032D43D /* Localizable.xcstrings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		C034A4E52C73B4AC0037E379 /* Repertoire */ = {
+			isa = PBXGroup;
+			children = (
+				C034A4EC2C73B6A00037E379 /* RepertoireView.swift */,
+			);
+			path = Repertoire;
+			sourceTree = "<group>";
+		};
+		C034A4E62C73B4B20037E379 /* Rehearsals */ = {
+			isa = PBXGroup;
+			children = (
+				C034A4EA2C73B6980037E379 /* RehearsalsView.swift */,
+			);
+			path = Rehearsals;
+			sourceTree = "<group>";
+		};
+		C034A4E72C73B4B70037E379 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C034A4E82C73B56A0037E379 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		C0D64B6A2C739F4D00210C98 /* Activation */ = {
@@ -326,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C034A4ED2C73B6A00037E379 /* RepertoireView.swift in Sources */,
 				C0D64B692C70036200210C98 /* Extensions.swift in Sources */,
 				9540B8A72C65CB320055B49F /* TuneView.swift in Sources */,
 				9540B8D02C671EC60055B49F /* AccountRegistrationStore.swift in Sources */,
@@ -333,6 +373,7 @@
 				95AEDA432C701C0000B9F938 /* DateFormatter.swift in Sources */,
 				95FC1A832C695B6D0032D43D /* PasswordValidator.swift in Sources */,
 				95FC1A892C6965F60032D43D /* RootView.swift in Sources */,
+				C034A4E42C73B34E0037E379 /* BandHomePageView.swift in Sources */,
 				95FC1A8E2C69678A0032D43D /* BandListView.swift in Sources */,
 				9540B8CC2C66F4560055B49F /* AccountRegistrationView.swift in Sources */,
 				95FC1A7A2C694FD80032D43D /* TuneListView.swift in Sources */,
@@ -342,10 +383,13 @@
 				95FC1A702C6949280032D43D /* GazeboAPIAgent.swift in Sources */,
 				95FC1A752C694D9B0032D43D /* GazeboTuneList.swift in Sources */,
 				C0D64B6E2C739F6E00210C98 /* ActivationStore.swift in Sources */,
+				C034A4EF2C73B6B70037E379 /* TestBand.swift in Sources */,
 				C0D64B742C73ABC700210C98 /* NewBandRequest.swift in Sources */,
 				9540B8C92C66F42F0055B49F /* LoginView.swift in Sources */,
 				95AEDA402C70172100B9F938 /* BandView.swift in Sources */,
 				C0D64B6C2C739F6000210C98 /* AccountActivationView.swift in Sources */,
+				C034A4E92C73B56A0037E379 /* SettingsView.swift in Sources */,
+				C034A4EB2C73B6980037E379 /* RehearsalsView.swift in Sources */,
 				95FC1A8B2C69660F0032D43D /* GazeboAuthentication.swift in Sources */,
 				C0D64B722C73A18900210C98 /* ActivationResponse.swift in Sources */,
 				95FC1A782C694F490032D43D /* GazeboBand.swift in Sources */,
