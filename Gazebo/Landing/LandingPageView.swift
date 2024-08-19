@@ -10,6 +10,8 @@ import SwiftUI
 struct LandingPageView: View {
     @StateObject private var registrationStore = AccountRegistrationStore()
     @StateObject private var loginStore = LoginStore()
+    @StateObject private var activationStore = ActivationStore()
+
     var body: some View {
         NavigationStack {
             Text("Gazebo")
@@ -17,6 +19,7 @@ struct LandingPageView: View {
             HStack {
                 registerButton
                 loginButton
+                activateButton
             }
         }
     }
@@ -30,6 +33,12 @@ struct LandingPageView: View {
     var loginButton: some View {
         NavigationLink("Login") {
             LoginView(store: loginStore)
+        }
+    }
+
+    var activateButton: some View {
+        NavigationLink("Activate") {
+            AccountActivationView(store: activationStore)
         }
     }
 }

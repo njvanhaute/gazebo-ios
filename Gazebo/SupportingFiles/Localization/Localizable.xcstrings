@@ -1,10 +1,25 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Account activated!" : {
+
+    },
     "Account already exists" : {
 
     },
     "Account created!" : {
+
+    },
+    "Account not activated" : {
+
+    },
+    "Activate" : {
+
+    },
+    "Activate your account" : {
+
+    },
+    "Activation Token" : {
 
     },
     "Can't connect to server" : {
@@ -26,6 +41,9 @@
 
     },
     "Invalid Credentials" : {
+
+    },
+    "Invalid token" : {
 
     },
     "Keys: %@" : {

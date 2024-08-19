@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct BandListView: View {
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var bandStore: BandStore = BandStore()
+    @State private var accountInactive = false
 
     var body: some View {
         NavigationStack {
@@ -20,9 +22,26 @@ struct BandListView: View {
         }
         .task {
             Task {
-                try await bandStore.loadBands()
+                do {
+                    try await bandStore.loadBands()
+                } catch GazeboAPIError.accountNotActivated {
+                    accountInactive = true
+                }
             }
         }
+        .alert(
+            "Account not activated",
+            isPresented: $accountInactive,
+            presenting:
+                """
+                Your account must be activated to use the app. Check your email for further instructions.
+                """,
+            actions: { _ in
+                Button("OK", role: .cancel) {
+                    GazeboAuthentication.shared.logout()
+                }
+            },
+            message: { reason in Text(reason) })
         Button("Log out") {
             GazeboAuthentication.shared.logout()
         }

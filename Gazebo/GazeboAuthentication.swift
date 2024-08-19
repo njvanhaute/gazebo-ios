@@ -12,7 +12,6 @@ class GazeboAuthentication: ObservableObject {
     enum KeychainDataType: String {
         case token
         case password
-        case userId
     }
 
     static let shared = GazeboAuthentication()
@@ -35,8 +34,7 @@ class GazeboAuthentication: ObservableObject {
         if let email = getEmail() {
             let password = getPassword(for: email)
             let token = getToken(for: email)
-            let userId = getUserId(for: email)
-            if expiryValid() && password != nil && token != nil && userId != nil {
+            if expiryValid() && password != nil && token != nil {
                 return true
             }
         }
@@ -53,7 +51,6 @@ class GazeboAuthentication: ObservableObject {
     func setSecrets(email: String, password: String, accessToken: AuthenticationToken) {
         keychain.set(password, forKey: keychainKey(for: email, type: .password))
         keychain.set(accessToken.token, forKey: keychainKey(for: email, type: .token))
-        keychain.set(String(accessToken.userId), forKey: keychainKey(for: email, type: .userId))
 
         UserDefaults.standard.set(email, forKey: userDefaultsEmailKey)
         UserDefaults.standard.set(accessToken.expiry, forKey: userDefaultsTokenExpiryKey)
@@ -94,10 +91,6 @@ class GazeboAuthentication: ObservableObject {
 
     func getToken(for email: String) -> String? {
         keychain.get(keychainKey(for: email, type: .token))
-    }
-
-    func getUserId(for email: String) -> String? {
-        keychain.get(keychainKey(for: email, type: .userId))
     }
 
     func getExpiryDate() -> Date? {

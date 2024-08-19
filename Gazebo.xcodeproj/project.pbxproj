@@ -37,6 +37,10 @@
 		95FC1A962C6970FA0032D43D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 95FC1A952C6970FA0032D43D /* Localizable.xcstrings */; };
 		95FC1A982C700FE30032D43D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95FC1A972C700FE30032D43D /* KeychainSwift */; };
 		C0D64B692C70036200210C98 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B682C70036200210C98 /* Extensions.swift */; };
+		C0D64B6C2C739F6000210C98 /* AccountActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B6B2C739F6000210C98 /* AccountActivationView.swift */; };
+		C0D64B6E2C739F6E00210C98 /* ActivationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B6D2C739F6E00210C98 /* ActivationStore.swift */; };
+		C0D64B702C739F7D00210C98 /* ActivationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B6F2C739F7D00210C98 /* ActivationForm.swift */; };
+		C0D64B722C73A18900210C98 /* ActivationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D64B712C73A18900210C98 /* ActivationResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +74,10 @@
 		95FC1A8D2C69678A0032D43D /* BandListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandListView.swift; sourceTree = "<group>"; };
 		95FC1A952C6970FA0032D43D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		C0D64B682C70036200210C98 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C0D64B6B2C739F6000210C98 /* AccountActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountActivationView.swift; sourceTree = "<group>"; };
+		C0D64B6D2C739F6E00210C98 /* ActivationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationStore.swift; sourceTree = "<group>"; };
+		C0D64B6F2C739F7D00210C98 /* ActivationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationForm.swift; sourceTree = "<group>"; };
+		C0D64B712C73A18900210C98 /* ActivationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 				9540B8C42C66F16B0055B49F /* API */,
 				95FC1A712C694AF00032D43D /* Login */,
 				9540B8D12C67307B0055B49F /* Registration */,
+				C0D64B6A2C739F4D00210C98 /* Activation */,
 				95FC1A6E2C6948CF0032D43D /* Tunes */,
 				C0D64B682C70036200210C98 /* Extensions.swift */,
 				95FC1A882C6965F60032D43D /* RootView.swift */,
@@ -224,6 +233,17 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		C0D64B6A2C739F4D00210C98 /* Activation */ = {
+			isa = PBXGroup;
+			children = (
+				C0D64B6B2C739F6000210C98 /* AccountActivationView.swift */,
+				C0D64B6D2C739F6E00210C98 /* ActivationStore.swift */,
+				C0D64B6F2C739F7D00210C98 /* ActivationForm.swift */,
+				C0D64B712C73A18900210C98 /* ActivationResponse.swift */,
+			);
+			path = Activation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,10 +338,14 @@
 				9540B8A52C65CB320055B49F /* GazeboApp.swift in Sources */,
 				95FC1A702C6949280032D43D /* GazeboAPIAgent.swift in Sources */,
 				95FC1A752C694D9B0032D43D /* GazeboTuneList.swift in Sources */,
+				C0D64B6E2C739F6E00210C98 /* ActivationStore.swift in Sources */,
 				9540B8C92C66F42F0055B49F /* LoginView.swift in Sources */,
 				95AEDA402C70172100B9F938 /* BandView.swift in Sources */,
+				C0D64B6C2C739F6000210C98 /* AccountActivationView.swift in Sources */,
 				95FC1A8B2C69660F0032D43D /* GazeboAuthentication.swift in Sources */,
+				C0D64B722C73A18900210C98 /* ActivationResponse.swift in Sources */,
 				95FC1A782C694F490032D43D /* GazeboBand.swift in Sources */,
+				C0D64B702C739F7D00210C98 /* ActivationForm.swift in Sources */,
 				9540B8CE2C66F5220055B49F /* AccountRegistrationForm.swift in Sources */,
 				95FC1A7D2C6954570032D43D /* LandingPageView.swift in Sources */,
 				95FC1A812C695AD30032D43D /* EmailValidator.swift in Sources */,
