@@ -9,29 +9,57 @@ import SwiftUI
 
 struct BandHomePageView: View {
     let band: GazeboBand
-
     init(for band: GazeboBand) {
         self.band = band
     }
 
     var body: some View {
-        TabView {
+        VStack {
+            header
+            repertoireLink
+            rehearsalsLink
+            settingsLink
+        }
+    }
+
+    var repertoireLink: some View {
+        NavigationLink {
             RepertoireView(for: band)
-                .tabItem {
-                    Label("Repertoire", systemImage: "music.note.list")
+                .navigationDestination(for: GazeboTune.self) { tune in
+                    Text(tune.title)
                 }
+        } label: {
+            Label("Repertoire", systemImage: "music.note.list")
+        }
+        .font(.title)
+        .padding(5)
+    }
+
+    var rehearsalsLink: some View {
+        NavigationLink {
             RehearsalsView(for: band)
-                .tabItem {
-                    Label("Rehearsals", systemImage: "music.note.house")
-                }
+        } label: {
+            Label("Rehearsals", systemImage: "music.note.house")
+        }
+        .font(.title)
+        .padding(5)
+    }
+
+    var settingsLink: some View {
+        NavigationLink {
             SettingsView(for: band)
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape")
-                }
+        } label: {
+            Label("Settings", systemImage: "gearshape")
         }
-        .navigationDestination(for: GazeboTune.self) { tune in
-            Text(tune.title)
-        }
+        .font(.title)
+        .padding(5)
+    }
+
+    var header: some View {
+        Text(band.name)
+            .bold()
+            .font(.largeTitle)
+            .padding(20)
     }
 }
 

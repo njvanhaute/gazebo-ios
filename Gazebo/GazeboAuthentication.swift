@@ -37,6 +37,7 @@ class GazeboAuthentication: ObservableObject {
             if token != nil {
                 print(token!)
             }
+            print(email)
             if expiryValid() && password != nil && token != nil {
                 return true
             }

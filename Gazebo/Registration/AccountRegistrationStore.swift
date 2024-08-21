@@ -32,7 +32,7 @@ class AccountRegistrationStore: ObservableObject {
             networkRequestIsInFlight = false
         }
 
-        let endpoint = "http://localhost:4000/v1/users"
+        let endpoint = "https://api.gazebosoftware.com/v1/users"
 
         guard let url = URL(string: endpoint) else {
             throw GazeboAPIError.invalidURL

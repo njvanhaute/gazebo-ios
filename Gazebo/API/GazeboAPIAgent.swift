@@ -30,7 +30,7 @@ struct GazeboAPIAgent {
     static let shared = GazeboAPIAgent()
 
     private init() {
-        hostname = "http://localhost:4000/v1/"
+        hostname = "https://api.gazebosoftware.com/v1/"
     }
 
     func getResource<T: Decodable>(from path: String, authenticate: Bool) async throws -> T {
